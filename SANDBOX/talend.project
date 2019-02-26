@@ -156,7 +156,7 @@
       <relatedItems xmi:id="_H89NYjmkEeme66ymTnuNEA" id="MDM" version="Latest" type="routine"/>
       <relatedItems xmi:id="_H89NYzmkEeme66ymTnuNEA" id="TalendStringUtil" version="Latest" type="routine"/>
       <relatedItems xmi:id="_H89NZDmkEeme66ymTnuNEA" id="_kjuLsDmfEeme66ymTnuNEA - employees" version="Latest" type="schema"/>
-      <relatedItems xmi:id="_RUCNQDmrEeme66ymTnuNEA" id="_pLsR0DmeEeme66ymTnuNEA" version="0.2" type="services"/>
+      <relatedItems xmi:id="_YaN64DmtEeme66ymTnuNEA" id="_pLsR0DmeEeme66ymTnuNEA" version="0.3" type="services"/>
     </ItemsRelations>
     <ItemsRelations xmi:id="_871-YDmlEeme66ymTnuNEA">
       <baseItem xmi:id="_871-YTmlEeme66ymTnuNEA" id="_F1Az8DmlEeme66ymTnuNEA" version="0.1" type="job"/>
