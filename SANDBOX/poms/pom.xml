@@ -19,6 +19,7 @@
     <module>code/beans</module>
     <module>jobs/services/employees_0.2</module>
     <module>jobs/services/employees_0.3</module>
+    <module>jobs/process/employees/employeesPortType/getEmployeesInformation/employeesporttype_getemployeesinformation_0.2</module>
   </modules>
   <properties>
     <talend.project.name>SANDBOX</talend.project.name>
