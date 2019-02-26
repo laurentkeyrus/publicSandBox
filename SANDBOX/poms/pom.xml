@@ -17,6 +17,7 @@
     <module>jobs/process/employees/randomemployeetests_0.1</module>
     <module>jobs/services/employees_0.1</module>
     <module>code/beans</module>
+    <module>jobs/services/employees_0.2</module>
   </modules>
   <properties>
     <talend.project.name>SANDBOX</talend.project.name>
