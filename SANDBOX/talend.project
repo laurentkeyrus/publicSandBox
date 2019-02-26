@@ -158,6 +158,7 @@
       <relatedItems xmi:id="_JglDpDmhEeme66ymTnuNEA" id="_kjuLsDmfEeme66ymTnuNEA - employees" version="Latest" type="schema"/>
       <relatedItems xmi:id="_JglDpTmhEeme66ymTnuNEA" id="_pLsR0DmeEeme66ymTnuNEA" version="0.1" type="services"/>
     </ItemsRelations>
+    <deletedFolders>metadata/fileXml/www-talend-org/service/employeesPortType/getEmployeesInformation</deletedFolders>
     <migrationTask xmi:id="_4vNwYCRxEem47u1BBsxZog" id="org.talend.repository.localprovider.RemoveRoutineFolderTask" breaks="5.1.1" version="5.1.2" status="noimpact"/>
     <migrationTask xmi:id="_4vOXcCRxEem47u1BBsxZog" id="org.talend.repository.localprovider.model.migration.ChangeXmiSerialization" breaks="5.1.1" version="5.1.2" status="noimpact"/>
     <migrationTask xmi:id="_4vOXcSRxEem47u1BBsxZog" id="org.talend.repository.model.migration.CleanFoldersMigrationTask" breaks="5.1.1" version="5.1.2" status="noimpact"/>
