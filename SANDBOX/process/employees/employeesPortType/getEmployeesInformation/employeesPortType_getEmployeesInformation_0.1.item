@@ -155,25 +155,29 @@
       </inputTrees>
       <inputTrees lookup="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="lkpEmployees">
         <nodes expression="[employeesRequest.payload:/tns:getEmployeesInformationRequest/employeeId]" lookupIncomingConnections="//@node.1/@nodeData/@connections.0" name="emp_no" nullable="false" type="id_String" xpath="lkpEmployees/emp_no"/>
-        <nodes name="birth_date" nullable="false" type="id_Date" xpath="lkpEmployees/birth_date"/>
-        <nodes name="first_name" nullable="false" type="id_String" xpath="lkpEmployees/first_name"/>
-        <nodes name="last_name" nullable="false" type="id_String" xpath="lkpEmployees/last_name"/>
-        <nodes name="gender" nullable="false" type="id_Object" xpath="lkpEmployees/gender"/>
+        <nodes name="birth_date" nullable="false" outgoingConnections="//@node.1/@nodeData/@connections.3" type="id_Date" xpath="lkpEmployees/birth_date"/>
+        <nodes name="first_name" nullable="false" outgoingConnections="//@node.1/@nodeData/@connections.1" type="id_String" xpath="lkpEmployees/first_name"/>
+        <nodes name="last_name" nullable="false" outgoingConnections="//@node.1/@nodeData/@connections.2" type="id_String" xpath="lkpEmployees/last_name"/>
+        <nodes name="gender" nullable="false" outgoingConnections="//@node.1/@nodeData/@connections.4" type="id_Object" xpath="lkpEmployees/gender"/>
         <nodes name="hire_date" nullable="false" type="id_Date" xpath="lkpEmployees/hire_date"/>
       </inputTrees>
       <outputTrees name="employeesResponse">
         <nodes expression="" name="payload" type="id_Document" xpath="employeesResponse/payload">
           <children main="true" name="tns:getEmployeesInformationResponse" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse" xsi:type="TalendXMLMap:OutputTreeNode">
             <children defaultValue="http://www.talend.org/service/" name="tns" nodeType="NAME_SPACE" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse/xmlns:tns" xsi:type="TalendXMLMap:OutputTreeNode"/>
-            <children expression="lkpEmployees.first_name" loop="true" name="firstName" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse/firstName" xsi:type="TalendXMLMap:OutputTreeNode"/>
-            <children expression="lkpEmployees.last_name" name="lastName" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse/lastName" xsi:type="TalendXMLMap:OutputTreeNode"/>
-            <children expression="" name="dateOfBirth" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse/dateOfBirth" xsi:type="TalendXMLMap:OutputTreeNode"/>
-            <children expression="lkpEmployees.gender" name="gender" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse/gender" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression=" lkpEmployees.first_name" incomingConnections="//@node.1/@nodeData/@connections.1" loop="true" name="firstName" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse/firstName" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression=" lkpEmployees.last_name" incomingConnections="//@node.1/@nodeData/@connections.2" name="lastName" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse/lastName" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression=" lkpEmployees.birth_date" incomingConnections="//@node.1/@nodeData/@connections.3" name="dateOfBirth" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse/dateOfBirth" xsi:type="TalendXMLMap:OutputTreeNode"/>
+            <children expression=" lkpEmployees.gender" incomingConnections="//@node.1/@nodeData/@connections.4" name="gender" type="id_String" xpath="employeesResponse.payload:/tns:getEmployeesInformationResponse/gender" xsi:type="TalendXMLMap:OutputTreeNode"/>
           </children>
         </nodes>
       </outputTrees>
       <varTables minimized="true" name="Var"/>
       <connections source="//@node.1/@nodeData/@inputTrees.0/@nodes.0/@children.0/@children.1" target="//@node.1/@nodeData/@inputTrees.1/@nodes.0" xsi:type="TalendXMLMap:LookupConnection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.1/@nodes.2" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.1" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.1/@nodes.3" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.2" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.1/@nodes.1" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.3" xsi:type="TalendXMLMap:Connection"/>
+      <connections source="//@node.1/@nodeData/@inputTrees.1/@nodes.4" target="//@node.1/@nodeData/@outputTrees.0/@nodes.0/@children.0/@children.4" xsi:type="TalendXMLMap:Connection"/>
     </nodeData>
   </node>
   <node componentName="tESBProviderResponse" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="288">
@@ -345,13 +349,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_7056026d-94be-4b3f-84a2-42ef9d822835"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>qMBFQjXSTlv421g9olGEzDDBeClckdwqqTBx2x4ty9hMIRGA77VXu6qm+Ol1zoYSysOJ8p4T/Cvp
-XBoqCU7YLw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_3c813b48-6d69-4a65-aa82-f04ba8680f83"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>P5T7S3fN2r0m28a0oRLxhYFrY6GmxUT0ab9hMkWgmTx5gbSMB33biPiAHr9AcA5RVwQoZGCZxlIt
-p5vVPWkFHg==</DigestValue></Reference></SignedInfo><SignatureValue>q1tyBq7nMMxhb4hvLD6fvQwCn475Bor3C0s2JNvCIR7IYvrG9iGhxwM+c29kt5Ysg8DTeGJsddKh
-i0Z8DTp2zEcCxAKXcWy1sV+Kg+9f1lpOTXPxyKFGzW9DHeraZhq3jAZm8oFtdQfhsjYEylEu/GrT
-K3hVvbH9LCPSBavV7IMvW5y4FwE/lHrsmugOPfLqVF7wPV3IrbjCnLctMrvjxhysEwi7Wnp9mTsh
-/PVnxWgdB9FoyUYocACZvu6JKXK/90TXefW/AZVQw1hDEHiwCX5eJ2XxbIbO2tLMJKFHW1nJe+6B
-bD73kmFh0bvhkvVuanPywpSBXBwd/JVV5JLIvA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_80914bfc-6a71-4455-9bce-f50db98b9a02"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>WyCBOmhdHxlEtTmT5P6fUgGyrl6X+8ajBSIIGcVZF6Ew8h+XrLKsup/XnDf5vDOLNiE0jV8fsSfp
+R/WyNZ9w6A==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_fc0d2bb2-9ac8-4edd-bd8f-91c1d8ad024c"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>aSpgqR6nPjnfTYpqGc9RQxpZ3AcJN2oQ5UKTZLbiGCOqAatp3kpx87VulNhWtwb74MxDWxCq/HWn
+5CuF8ZfafA==</DigestValue></Reference></SignedInfo><SignatureValue>kkQw8NpeVcAibhAOQw5ZfFe346SnQ6jfgbqGmW7FJ2ss1tfDQqXV7OZ0G+SYaAo9+MVTYo/MV6J+
+tIuE3KaUwCFjN/eDtjcDibZS5kydgifAFB6hUqrcpgPBJ7fxal+IxkmO0GfA5i9fRDi+z5XkuHgu
+/lRvPbPyiABJEqfZUWv+oCwmhjYJytz6qAjVBn5EgZb7qXeDVwpXVV38SARuw9C5OgXjwusJPp+K
+w7VE65/4TvWa0aI0Q0vfRVeeMolmbO45dIB/YFnBzmC9LqM0AuJKm822R2ihXh82rmCmv6DWLZok
+JNGKlFniH6bF5IXDLTAcCJ275w9B4E5JRM62wg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -375,4 +379,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_3c813b48-6d69-4a65-aa82-f04ba8680f83" Target="#_7056026d-94be-4b3f-84a2-42ef9d822835"><Timestamp>2019-02-26 08:39:35</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_fc0d2bb2-9ac8-4edd-bd8f-91c1d8ad024c" Target="#_80914bfc-6a71-4455-9bce-f50db98b9a02"><Timestamp>2019-02-26 08:41:16</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
