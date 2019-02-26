@@ -9,14 +9,14 @@
 	<wsdl:types>
 		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 			targetNamespace="http://www.talend.org/service/">
-			<xsd:element name="employeesOperationRequest">
+			<xsd:element name="getEmployeesInformationRequest">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="in" type="xsd:string"></xsd:element>
+						<xsd:element name="employeeId" type="xsd:string"></xsd:element>
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-			<xsd:element name="employeesOperationResponse">
+			<xsd:element name="getEmployeesInformationResponse">
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="out" type="xsd:string"></xsd:element>
@@ -26,24 +26,24 @@
 		</xsd:schema>
 	</wsdl:types>
 
-	<wsdl:message name="employeesOperationRequest">
-		<wsdl:part name="parameters" element="tns:employeesOperationRequest"></wsdl:part>
+	<wsdl:message name="getEmployeesInformationRequest">
+		<wsdl:part name="parameters" element="tns:getEmployeesInformationRequest"></wsdl:part>
 	</wsdl:message>
-	<wsdl:message name="employeesOperationResponse">
-		<wsdl:part name="parameters" element="tns:employeesOperationResponse"></wsdl:part>
+	<wsdl:message name="getEmployeesInformationResponse">
+		<wsdl:part name="parameters" element="tns:getEmployeesInformationResponse"></wsdl:part>
 	</wsdl:message>
 
 	<wsdl:portType name="employeesPortType">
-		<wsdl:operation name="employeesOperation">
-			<wsdl:input message="tns:employeesOperationRequest"></wsdl:input>
-			<wsdl:output message="tns:employeesOperationResponse"></wsdl:output>
+		<wsdl:operation name="getEmployeesInformation">
+			<wsdl:input message="tns:getEmployeesInformationRequest"></wsdl:input>
+			<wsdl:output message="tns:getEmployeesInformationResponse"></wsdl:output>
 		</wsdl:operation>
 	</wsdl:portType>
 
 	<wsdl:binding name="employeesBinding" type="tns:employeesPortType">
 		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
-		<wsdl:operation name="employeesOperation">
-			<soap:operation soapAction="http://www.talend.org/service/employeesOperation" />
+		<wsdl:operation name="getEmployeesInformation">
+			<soap:operation soapAction="http://www.talend.org/service/getEmployeesInformation" />
 			<wsdl:input>
 				<soap:body use="literal" />
 			</wsdl:input>
