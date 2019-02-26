@@ -9,16 +9,19 @@
     <relativePath>../../../../../../</relativePath>
   </parent>
   <groupId>org.example.sandbox.job</groupId>
-  <artifactId>employeesPortType_getEmployeesInformation</artifactId>
+  <artifactId>employeesPortType_getEmployeesInformation-bundle</artifactId>
   <version>0.1.0</version>
-  <name>SANDBOX employeesPortType_getEmployeesInformation-0.1.0 (0.1,Job Designs)</name>
   <properties>
     <output.resources.dir>${talend.job.name}/src/main/resources</output.resources.dir>
     <talend.job.applyContextToChildren>false</talend.job.applyContextToChildren>
     <current.test.resources.dir>${basedir}/src/test/resources</current.test.resources.dir>
     <current.int-resources.dir>${basedir}/src/main/resources</current.int-resources.dir>
+    <item.project.name>@ItemProjectName@</item.project.name>
+    <provided.lib.path>${current.bundle.resources.dir}/provided-lib</provided.lib.path>
     <talend.job.version>0.1</talend.job.version>
+    <bundle.config.import.package>@BundleConfigImportPackage@</bundle.config.import.package>
     <talend.project.name.lowercase>sandbox</talend.project.name.lowercase>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <talend.job.path>sandbox/employeesporttype_getemployeesinformation_0_1</talend.job.path>
     <maven.build.timestamp.format>yyyy-MM-dd HHmmssSSS</maven.build.timestamp.format>
     <talend.project.name>SANDBOX</talend.project.name>
@@ -28,13 +31,18 @@
     <talend.routine.groupid>org.example.sandbox.code</talend.routine.groupid>
     <current.bundle.resources.dir>${basedir}/src/main/bundle-resources</current.bundle.resources.dir>
     <talend.job.jvmargs>-Xms256M -Xmx1024M -Dfile.encoding=UTF-8 </talend.job.jvmargs>
-    <talend.project.branch>master</talend.project.branch>
-    <talend.job.context>Default</talend.job.context>
+    <bundle.config.export.service>@BundleConfigExportService@</bundle.config.export.service>
     <talend.job.stat>true</talend.job.stat>
-    <talend.job.date>${maven.build.timestamp}</talend.job.date>
+    <talend.job.context>Default</talend.job.context>
+    <talend.project.branch>master</talend.project.branch>
+    <bundle.config.bundle.classpath>@BundleConfigBundleClasspath@</bundle.config.bundle.classpath>
+    <lib.path>${resources.path}/lib</lib.path>
+    <item.name>@ItemName@</item.name>
     <current.resources.dir>${basedir}/src/main/ext-resources</current.resources.dir>
     <talend.job.name>employeesPortType_getEmployeesInformation</talend.job.name>
+    <bundle.config.export.package>@BundleConfigExportPackage@</bundle.config.export.package>
     <talend.job.id>_1Phd0DmjEeme66ymTnuNEA</talend.job.id>
+    <resources.path>${basedir}/src/main/resources</resources.path>
     <talend.project.id>0</talend.project.id>
     <talend.job.framework></talend.job.framework>
     <talend.job.type>Standard</talend.job.type>
@@ -202,14 +210,33 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>${talend.job.finalName}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>2.5.3</version>
+        <extensions>true</extensions>
+        <configuration>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive>
+          <instructions>
+            <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+            <Bundle-Name>${talend.job.name}</Bundle-Name>
+            <Bundle-Version>${project.version}</Bundle-Version>
+            <Export-Package>${bundle.config.export.package}</Export-Package>
+            <Export-Service>${bundle.config.export.service}</Export-Service>
+            <Import-Package>${bundle.config.import.package}, *;resolution:=optional</Import-Package>
+            <Bundle-ClassPath>., {maven-dependencies}</Bundle-ClassPath>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
   <profiles>
     <profile>
       <id>packaging-and-assembly</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
+      <activation />
       <build>
         <plugins>
           <plugin>
@@ -226,7 +253,10 @@
                   </descriptors>
                   <tarLongFileMode>gnu</tarLongFileMode>
                   <appendAssemblyId>false</appendAssemblyId>
-                  <finalName>${talend.job.finalName}</finalName>
+                  <finalName>${talend.job.name}-bundle-${project.version}</finalName>
+                  <archive>
+                    <manifestFile>${current.bundle.resources.dir}/META-INF/MANIFEST.MF</manifestFile>
+                  </archive>
                 </configuration>
               </execution>
             </executions>
@@ -374,7 +404,7 @@
     <profile>
       <id>include-microservice-running-configs</id>
       <properties>
-        <microservice.running.configs.dir>${current.int-resources.dir}/</microservice.running.configs.dir>
+        <microservice.running.configs.dir>${current.resources.dir}/</microservice.running.configs.dir>
       </properties>
     </profile>
     <profile>
