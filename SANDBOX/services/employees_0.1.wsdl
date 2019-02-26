@@ -19,7 +19,18 @@
 			<xsd:element name="getEmployeesInformationResponse">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="out" type="xsd:string"></xsd:element>
+						<xsd:element name="firstName"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="lastName"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="dateOfBirth"
+							type="xsd:string">
+						</xsd:element>
+						<xsd:element name="gender"
+							type="xsd:string">
+						</xsd:element>
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
