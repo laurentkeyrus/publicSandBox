@@ -198,7 +198,7 @@
       <relatedItems xmi:id="_05P1cjmvEeme66ymTnuNEA" id="MDM" version="Latest" type="routine"/>
       <relatedItems xmi:id="_05P1czmvEeme66ymTnuNEA" id="TalendStringUtil" version="Latest" type="routine"/>
       <relatedItems xmi:id="_05P1dDmvEeme66ymTnuNEA" id="_kjuLsDmfEeme66ymTnuNEA - employees" version="Latest" type="schema"/>
-      <relatedItems xmi:id="_05P1dTmvEeme66ymTnuNEA" id="_pLsR0DmeEeme66ymTnuNEA" version="0.3" type="services"/>
+      <relatedItems xmi:id="_Gp8P0DmwEeme66ymTnuNEA" id="_pLsR0DmeEeme66ymTnuNEA" version="0.4" type="services"/>
     </ItemsRelations>
     <migrationTask xmi:id="_4vNwYCRxEem47u1BBsxZog" id="org.talend.repository.localprovider.RemoveRoutineFolderTask" breaks="5.1.1" version="5.1.2" status="noimpact"/>
     <migrationTask xmi:id="_4vOXcCRxEem47u1BBsxZog" id="org.talend.repository.localprovider.model.migration.ChangeXmiSerialization" breaks="5.1.1" version="5.1.2" status="noimpact"/>
