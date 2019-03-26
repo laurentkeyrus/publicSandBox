@@ -42,6 +42,11 @@
   <dependencies>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>activemq-client-5.14.5</artifactId>
+      <version>6.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>antlr-runtime-3.5.2</artifactId>
       <version>6.0.0</version>
     </dependency>
@@ -52,12 +57,42 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>geronimo-j2ee-management_1.1_spec-1.0.1</artifactId>
+      <version>6.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>geronimo-jms_1.1_spec-1.1.1</artifactId>
+      <version>6.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>hawtbuf-1.11</artifactId>
+      <version>6.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>log4j-1.2.16</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
+      <artifactId>mysql-connector-java-5.1.30-bin</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
       <artifactId>org.talend.dataquality.parser</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>slf4j-api-1.7.16</artifactId>
+      <version>6.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.talend.libraries</groupId>
+      <artifactId>slf4j-log4j12-1.7.16</artifactId>
       <version>6.0.0</version>
     </dependency>
     <dependency>
