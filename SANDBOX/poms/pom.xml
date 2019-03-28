@@ -22,6 +22,7 @@
     <module>jobs/process/employees/employeesPortType/getEmployeesInformation/employeesporttype_getemployeesinformation_0.2</module>
     <module>jobs/services/employees_0.4</module>
     <module>jobs/process/testrabbitmq_0.1</module>
+    <module>jobs/process/test_1.0</module>
   </modules>
   <properties>
     <talend.project.name>SANDBOX</talend.project.name>
