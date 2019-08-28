@@ -24,6 +24,7 @@
     <module>jobs/process/testrabbitmq_0.1</module>
     <module>jobs/process/test_1.0</module>
     <module>jobs/process/logsgenerator_0.1</module>
+    <module>jobs/process/testamq_4_msf_0.1</module>
   </modules>
   <properties>
     <talend.project.name>SANDBOX</talend.project.name>
