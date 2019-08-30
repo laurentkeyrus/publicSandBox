@@ -120,7 +120,7 @@
     <elementParameter field="TEXT" name="URLPATH" show="false" value="&quot;http://localhost:8080/JSON/JSON_file.txt&quot;"/>
     <elementParameter field="FILE" name="FILENAME" value="&quot;C:/clients/msf/2019.07.08-JSON-MasterData.json&quot;"/>
     <elementParameter field="TEXT" name="LOOP_QUERY" show="false" value="&quot;/bills/bill/line&quot;"/>
-    <elementParameter field="TEXT" name="JSON_LOOP_QUERY" value="&quot;$.bills.bill.line[*]&quot;"/>
+    <elementParameter field="TEXT" name="JSON_LOOP_QUERY" value="&quot;$.referentials.sessions[*]&quot;"/>
     <elementParameter field="TABLE" name="MAPPING" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="session_id"/>
       <elementValue elementRef="QUERY" value=""/>
@@ -149,29 +149,29 @@
     </elementParameter>
     <elementParameter field="TABLE" name="MAPPING_JSONPATH">
       <elementValue elementRef="SCHEMA_COLUMN" value="session_id"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.id&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;id&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_name"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.name&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;name&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_translated_fr"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.textTranslations.text_fr&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;textTranslations.text_fr&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_translated_en"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.textTranslations.text_en&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;textTranslations.text_en&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_type"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.type&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;sessions.type&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_month"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.month&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;month&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_year"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.year&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;year&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_updatedDataYear"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.updatedDataYear&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;updatedDataYear&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_followUpReferenceSessionId"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.followUpReferenceSessionId&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;followUpReferenceSessionId&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_constructionReferenceSessionId"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.constructionReferenceSessionId&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;constructionReferenceSessionId&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_constructionReferenceSessionCreatedFromId"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.constructionReferenceSessionCreatedFromId&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;constructionReferenceSessionCreatedFromId&quot;"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="session_externalSessionId"/>
-      <elementValue elementRef="QUERY" value="&quot;$.referentials.sessions.externalSessionId&quot;"/>
+      <elementValue elementRef="QUERY" value="&quot;externalSessionId&quot;"/>
     </elementParameter>
     <elementParameter field="TABLE" name="MAPPINGXPATH" show="false">
       <elementValue elementRef="SCHEMA_COLUMN" value="session_id"/>
@@ -354,13 +354,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_c0cb4a35-8404-4ab5-817e-0dea5cc75e9c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TLBApd3yNpiRgAQUV4F0r20qNCcQOTHlcs/MW5a7m+w+mRK0YJzLSOliElSR8U3yPObFKpWWprSA
-6yrjNmRrKA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_90585c83-7c01-428d-97f5-68d06d539a03"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>77YEoUdOQ3X3wONDBQA+1FEHl+mnn2pAYEfw8booWPtAOPekQYbNc68ZjDMQkR7rMBDSeQjlFc3s
-+0Gutqpd3g==</DigestValue></Reference></SignedInfo><SignatureValue>xho4Wik/OjebA2g4Zt1StRQSwnOwInIcWKPi6JWjA7dSvs4XBrLBiHC7hCN+tOdjinNcDOOeCMps
-yppXIEZ/wwNwB7srUpFyTXDvrnemSBD7u3VRl23MHA51gTL4rWDssJZtB/y+VlEONW56d7Q+G2Kz
-fjefEWRGoAbVpyZmS3FrHo56LR2a/vny9Q/nFVf26FA48U4fpi3BgzXjRYZztoDIPMOtqq1QrFiS
-nvi6PO0TEPLChE0kBfE6VjI9XcLFn5VDOD5fKyIiOOfixq2S31/GHQEMVMUKDdB8oJQcz55sz7nW
-HEa9MZ1uUuCsyDzpqIQ5sGeRE5xYhba2kb99cg==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ebabc10e-1712-494d-b2a9-feeff737c41b"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>uxKZpd8WkdB+X/dbUG28ZXqWDtLoeq9fAE2OxVojIs4vlkJfesIgLuL+yM1DrMHGyStE1v0+7T0A
+RTjOz/YNEw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_913d40c7-c724-42a7-961e-d84ba0cf40d1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>TdAps2mg7Iq+GZhQBm85Q+vYgttMQmF/2E/SOlXFLjEJoSu3Lba7R+TU4Os1jGKbKhk0ytgmTHA8
+j2s2c+DFxw==</DigestValue></Reference></SignedInfo><SignatureValue>rhLSz1fo13vFXmdQSvT7klWDwe/nz5oTiWUDxP3qozL6oKP8n76XSnblGdVd4W7/AXv5auSOIajb
+UwWo7cKijq0fvvjub4+TaTcf3PwP8ftPgt9uxKa4nERfkh6b2e4ls3xZTj4DTlAmVzvh/3RukbwN
+U39K/8CKC0O3m44ZXmgG9dYuPU5Pbx5OX9unPeq9FmPKTHSrbdpCgWsCQq3xxGxMzGAp3sP5CXP0
+qnaq678Z5ZDGLUi24mbspFZaUb0bz1/ObS0RxPApet/4Gou3mNYojGuM13l71Lv1vvtCD3r3NnUL
+TaDI3QGuScVbz9HxCxJautRpLu+BqcQa/1rq/A==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -384,4 +384,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_90585c83-7c01-428d-97f5-68d06d539a03" Target="#_c0cb4a35-8404-4ab5-817e-0dea5cc75e9c"><Timestamp>2019-08-30 07:10:40</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_913d40c7-c724-42a7-961e-d84ba0cf40d1" Target="#_ebabc10e-1712-494d-b2a9-feeff737c41b"><Timestamp>2019-08-30 07:13:21</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
